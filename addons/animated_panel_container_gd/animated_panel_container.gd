@@ -18,7 +18,7 @@ func _on_tween_finished() -> void:
 
 func animated_hide(duration: float) -> AnimatedPanelContainer:
 	animated_transparent_hide(duration / 2)
-	animated_shrink(duration / 2)
+	animated_collapse(duration / 2)
 	return self
 
 func animated_show(duration: float) -> AnimatedPanelContainer:
@@ -58,13 +58,13 @@ func _internal_animated_transparent_show(target: Color) -> void:
 func _internal_animated_transparent_show_hide(target: Color) -> void:
 	modulate = target;
 
-func animated_shrink(duration: float) -> AnimatedPanelContainer:
+func animated_collapse(duration: float) -> AnimatedPanelContainer:
 	_check_tween()
 	# save current size
 	_custom_minimum_size = size;
 	# set minimum size
 	custom_minimum_size = size;
-	var t = _tween.tween_method(_internal_animated_expand_shrink, size, Vector2(0, 0), duration)
+	var t = _tween.tween_method(_internal_animated_expand_collapse, size, Vector2(0, 0), duration)
 	if (_delay > 0):
 		t.set_delay(duration)
 	_delay = duration
@@ -72,13 +72,13 @@ func animated_shrink(duration: float) -> AnimatedPanelContainer:
 
 func animated_expand(duration: float) -> AnimatedPanelContainer:
 	_check_tween()
-	var t = _tween.tween_method(_internal_animated_expand_shrink, size, _custom_minimum_size, duration)
+	var t = _tween.tween_method(_internal_animated_expand_collapse, size, _custom_minimum_size, duration)
 	if (_delay > 0):
 		t.set_delay(duration)
 	_delay = duration
 	return self
 
-func _internal_animated_expand_shrink(target: Vector2) -> void:
+func _internal_animated_expand_collapse(target: Vector2) -> void:
 	custom_minimum_size = target
 
 func _check_tween() -> void:

@@ -8,7 +8,6 @@ public partial class Horizontal : PanelContainer
     private PanelContainer _contentLabelContainer;
     private PanelContainer _leftButtonPanelContainer;
     private PanelContainer _rightButtonPanelContainer;
-    private Button _actionButton;
     private Vector2 _size;
     private bool _isExpanded = true;
     private double _duration = 0.6;
@@ -19,7 +18,6 @@ public partial class Horizontal : PanelContainer
         _contentLabelContainer = GetNode<PanelContainer>("%ContentLabelContainer");
         _leftButtonPanelContainer = GetNode<PanelContainer>("%LeftButtonPanelContainer");
         _rightButtonPanelContainer = GetNode<PanelContainer>("%RightButtonPanelContainer");
-        _actionButton = GetNode<Button>("%ActionButton");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,8 +41,9 @@ public partial class Horizontal : PanelContainer
         tween.Finished += () => _isExpanded = true;
     }
 
-    private void OnActionButtonPressed()
+    private void OnCollapseButtonPressed()
     {
+        if (!_isExpanded) return;
         // save size
         _size = Size;
         // set minimum size
