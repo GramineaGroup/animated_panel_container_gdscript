@@ -6,8 +6,6 @@ This plugin will animate size and visibility change in container.
 
 C# version is at [GramineaGroup/animated_panel_container_cs](https://github.com/GramineaGroup/animated_panel_container_cs)
 
-Side notes: It seems that GDScript version is faster than C# version.
-
 Please submit any issues you found. Contribution and suggestions are warmly welcomed.
 
 ## Demo
