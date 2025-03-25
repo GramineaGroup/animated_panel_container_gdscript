@@ -1,10 +1,10 @@
 @tool
 extends EditorPlugin
-const PLUGIN_NAME = "animated_panel_container"
+const PLUGIN_NAME = "AnimatedPanelContainer"
 
 func _enter_tree() -> void:
 	# Initialization of the plugin goes here.
-	add_custom_type(PLUGIN_NAME, "PanelContainer", preload(PLUGIN_NAME + ".gd"), preload("icon.png"))
+	add_custom_type(PLUGIN_NAME, "PanelContainer", preload("animated_panel_container.gd"), preload("icon.png"))
 	pass
 
 func _exit_tree() -> void:
