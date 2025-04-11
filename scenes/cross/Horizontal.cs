@@ -31,11 +31,11 @@ public partial class Horizontal : PanelContainer
         if (_isExpanded) return;
         var tween = CreateTween().SetParallel(true).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.InOut);
 
-        (_leftButtonPanelContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_transparent_show", [_duration]);
-        (_rightButtonPanelContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_transparent_show", [_duration]);
-        (_bottomContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_show", [_duration]);
-        (_contentLabelContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_show", [_duration]);
-        (_progressBarContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_show", [_duration]);
+        (_leftButtonPanelContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_transparent_show", [_duration]);
+        (_rightButtonPanelContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_transparent_show", [_duration]);
+        (_bottomContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_show", [_duration]);
+        (_contentLabelContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_show", [_duration]);
+        (_progressBarContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_show", [_duration]);
 
         tween.TweenProperty(this, "custom_minimum_size", _size, _duration);
         tween.Finished += () => _isExpanded = true;
@@ -50,11 +50,11 @@ public partial class Horizontal : PanelContainer
         CustomMinimumSize = Size;
         var tween = CreateTween().SetParallel(true).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.InOut);
 
-        (_leftButtonPanelContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_transparent_hide", [_duration]);
-        (_rightButtonPanelContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_transparent_hide", [_duration]);
-        (_bottomContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_hide", [_duration]);
-        (_contentLabelContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_hide", [_duration]);
-        (_progressBarContainer.Call("connect_tween", [tween]).Obj as PanelContainer).Call("animated_hide", [_duration]);
+        (_leftButtonPanelContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_transparent_hide", [_duration]);
+        (_rightButtonPanelContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_transparent_hide", [_duration]);
+        (_bottomContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_hide", [_duration]);
+        (_contentLabelContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_hide", [_duration]);
+        (_progressBarContainer.Call("create_new_tween").Obj as PanelContainer).Call("animated_hide", [_duration]);
 
         tween.TweenProperty(this, "custom_minimum_size", new Vector2(0, 0), _duration);
         tween.Finished += () => _isExpanded = false;

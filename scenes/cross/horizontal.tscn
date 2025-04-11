@@ -3,11 +3,11 @@
 [ext_resource type="Theme" uid="uid://dicxmbke0imcl" path="res://scenes/theme.tres" id="1_dxbve"]
 [ext_resource type="Script" uid="uid://bp1jui3dfq382" path="res://scenes/cross/Horizontal.cs" id="2_w4hqc"]
 [ext_resource type="Texture2D" uid="uid://o1ln7v6iuk5v" path="res://icons/close.svg" id="3_k7hel"]
-[ext_resource type="Script" uid="uid://ut75l2wdc7rq" path="res://addons/animated_panel_container_gd/animated_panel_container.gd" id="4_w4hqc"]
 [ext_resource type="Texture2D" uid="uid://dgknwv7v86hcn" path="res://icons/Under.svg" id="5_bhp70"]
 [ext_resource type="Texture2D" uid="uid://dsqxfi7ehknxi" path="res://icons/Progress.svg" id="6_upoy4"]
 [ext_resource type="Texture2D" uid="uid://dunatko0dk4n3" path="res://icons/TwitterLogo.svg" id="7_0s7r2"]
 [ext_resource type="Texture2D" uid="uid://drgo2kfcvo2qo" path="res://icons/Arrow_Left.svg" id="8_n4avl"]
+[ext_resource type="Script" uid="uid://ut75l2wdc7rq" path="res://addons/animated_panel_container_gd/animated_panel_container.gd" id="9_5rdon"]
 [ext_resource type="Texture2D" uid="uid://deu4a4e63ffys" path="res://icons/Arrow_Right.svg" id="9_jepq1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bibmp"]
@@ -54,7 +54,7 @@ icon_alignment = 1
 [node name="ProgressBarContainer" type="PanelContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("4_w4hqc")
+script = ExtResource("9_5rdon")
 metadata/_custom_type_script = "uid://ut75l2wdc7rq"
 
 [node name="ProgressBarMarginContainer" type="MarginContainer" parent="HBoxContainer/ProgressBarContainer"]
@@ -95,7 +95,7 @@ layout_mode = 2
 [node name="ContentLabelContainer" type="PanelContainer" parent="HBoxContainer/CenterMarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("4_w4hqc")
+script = ExtResource("9_5rdon")
 metadata/_custom_type_script = "uid://ut75l2wdc7rq"
 
 [node name="ContentLabelMarginContainer" type="MarginContainer" parent="HBoxContainer/CenterMarginContainer/VBoxContainer/ContentLabelContainer"]
@@ -121,7 +121,7 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-script = ExtResource("4_w4hqc")
+script = ExtResource("9_5rdon")
 metadata/_custom_type_script = "uid://ut75l2wdc7rq"
 
 [node name="LeftButton" type="Button" parent="HBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/LeftButtonPanelContainer"]
@@ -146,7 +146,7 @@ text = "Expand"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-script = ExtResource("4_w4hqc")
+script = ExtResource("9_5rdon")
 metadata/_custom_type_script = "uid://ut75l2wdc7rq"
 
 [node name="RightButton" type="Button" parent="HBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/RightButtonPanelContainer"]
@@ -161,7 +161,7 @@ icon_alignment = 1
 [node name="BottomContainer" type="PanelContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("4_w4hqc")
+script = ExtResource("9_5rdon")
 metadata/_custom_type_script = "uid://ut75l2wdc7rq"
 
 [node name="BottomMarginContainer" type="MarginContainer" parent="HBoxContainer/BottomContainer"]

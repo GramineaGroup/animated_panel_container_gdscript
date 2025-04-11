@@ -28,11 +28,11 @@ func _on_expand_button_pressed() -> void:
 		return
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	
-	_left_button_panel_container.connect_tween(tween).animated_transparent_show(_duration)
-	_right_button_panel_container.connect_tween(tween).animated_transparent_show(_duration)
-	_bottom_container.connect_tween(tween).animated_show(_duration)
-	_content_label_container.connect_tween(tween).animated_show(_duration)
-	_progressbar_container.connect_tween(tween).animated_show(_duration)
+	_left_button_panel_container.create_new_tween().animated_transparent_show(_duration)
+	_right_button_panel_container.create_new_tween().animated_transparent_show(_duration)
+	_bottom_container.create_new_tween().animated_show(_duration)
+	_content_label_container.create_new_tween().animated_show(_duration)
+	_progressbar_container.create_new_tween().animated_show(_duration)
 	
 	tween.tween_property(self, "custom_minimum_size", _size, _duration)
 	tween.finished.connect(_on_tween_finished.bind(true))
@@ -44,11 +44,11 @@ func _on_collapse_button_pressed() -> void:
 	custom_minimum_size = size
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	
-	_left_button_panel_container.connect_tween(tween).animated_transparent_hide(_duration)
-	_right_button_panel_container.connect_tween(tween).animated_transparent_hide(_duration)
-	_bottom_container.connect_tween(tween).animated_hide(_duration)
-	_content_label_container.connect_tween(tween).animated_hide(_duration)
-	_progressbar_container.connect_tween(tween).animated_hide(_duration)
+	_left_button_panel_container.create_new_tween().animated_transparent_hide(_duration)
+	_right_button_panel_container.create_new_tween().animated_transparent_hide(_duration)
+	_bottom_container.create_new_tween().animated_hide(_duration)
+	_content_label_container.create_new_tween().animated_hide(_duration)
+	_progressbar_container.create_new_tween().animated_hide(_duration)
 	
 	tween.tween_property(self, "custom_minimum_size", Vector2(0, 0), _duration)
 	tween.finished.connect(_on_tween_finished.bind(false))

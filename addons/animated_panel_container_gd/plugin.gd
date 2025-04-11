@@ -4,13 +4,12 @@ const PLUGIN_NAME = "AnimatedPanelContainer"
 
 func _enter_tree() -> void:
 	# Initialization of the plugin goes here.
-	add_custom_type(PLUGIN_NAME, "PanelContainer", preload("animated_panel_container.gd"), preload("icon.png"))
+	add_custom_type(PLUGIN_NAME, "PanelContainer", preload("animated_panel_container.gd"), preload("icon.svg"))
 	pass
 
 func _exit_tree() -> void:
 	# Clean-up of the plugin goes here.
 	remove_custom_type(PLUGIN_NAME)
-	pass
 
 ## Get the current path of the plugin
 func get_plugin_path() -> String:
