@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  PLUGIN_NAME: animated_panel_container_cs
+  PLUGIN_NAME: animated_panel_container_gd
 
 jobs:
   upload:
